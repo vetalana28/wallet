@@ -1,0 +1,405 @@
+:root {
+    --fiol: #5B5194;
+    --purple: #AEA4E2;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url(../fonts/Gilroy-Regular_0.ttf);
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(../fonts/Montserrat-SemiBold.ttf);
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gilroy';
+    color: var(--purple);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+input,
+select {
+    background-color: white;
+    border: 1px solid var(--purple);
+    padding: clamp(14px, 2vw, 19px) clamp(16px, 3vw, 25px);
+    border-radius: clamp(14px, 2vw, 20px);
+    font-size: clamp(16px, 2vw, 20px);
+    margin: clamp(10px, 2vw, 14px) 0;
+    outline: none;
+
+    &::placeholder {
+        color: var(--purple);
+        font-size: inherit;
+    }
+
+    &:focus {
+        border-color: var(--fiol);
+    }
+}
+
+main {
+    background: url(../image/fone.png) no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+}
+
+#login,
+#settings,
+#app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px 16px;
+}
+
+#login>.bg-form>form>.err {
+    display: flex;
+    justify-content: center;
+}
+
+.bg-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 465px;
+    height: auto;
+    background: rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.51);
+    backdrop-filter: blur(6px);
+    border-radius: clamp(24px, 5vw, 60px);
+    padding: clamp(6px, 1vw, 10px) clamp(6px, 1vw, 10px);
+}
+
+form {
+    width: 100%;
+    max-width: 445px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(180deg, #F4F9FF 0%, #F5F7FF 100%);
+    border: 1px solid rgba(255, 255, 255, 0.51);
+    backdrop-filter: blur(6px);
+    border-radius: clamp(24px, 5vw, 60px);
+    padding: clamp(24px, 5vw, 40px) clamp(16px, 4vw, 25px);
+
+    h1,
+    .coin,
+    p {
+        display: flex;
+        justify-content: center;
+    }
+
+    h1 {
+        color: var(--fiol);
+        font-weight: 500;
+        padding: clamp(16px, 4vw, 50px) 0;
+        font-size: clamp(22px, 4vw, 32px);
+
+    }
+
+    label {
+        color: var(--fiol);
+        font-size: clamp(16px, 2vw, 20px);
+    }
+
+
+
+    button {
+        font-size: clamp(16px, 2vw, 20px);
+        margin: 0 0 clamp(16px, 3vw, 24px);
+        cursor: pointer;
+    }
+}
+
+.btn {
+    background-color: var(--purple);
+    color: white;
+    border: 1px solid var(--purple);
+    padding: clamp(14px, 2vw, 19px) clamp(16px, 3vw, 25px);
+    border-radius: clamp(14px, 2vw, 20px);
+    transition: background-color 0.4s, transform 0.15s;
+
+    &:hover {
+        background-color: var(--fiol);
+    }
+}
+
+.notActive {
+    background-color: white;
+    color: var(--purple);
+
+    &:hover {
+        background-color: var(--purple);
+        color: white;
+    }
+}
+
+
+.coin {
+    font-size: clamp(40px, 8vw, 64px);
+    font-weight: 600;
+}
+
+.err {
+    font-size: clamp(13px, 1.6vw, 16px);
+    padding-bottom: 20px;
+}
+
+#app>.bg-form {
+    width: 100%;
+    max-width: 1200px;
+    min-height: 100vh;
+}
+
+#app {
+    h1 {
+        font-family: 'Montserrat';
+        font-weight: 800;
+        font-size: clamp(52px, 6.4vw, 64px);
+        color: var(--fiol);
+        text-wrap: nowrap;
+
+    }
+
+    h2 {
+        font-family: 'Montserrat';
+        font-weight: 800;
+        font-size: clamp(32px, 5vw, 48px);
+        padding-top: 10px;
+        text-wrap: nowrap;
+    }
+
+    h3 {
+        font-weight: 500;
+        font-size: clamp(16px, 3vw, 24px);
+
+    }
+
+    .pb18 {
+        padding-bottom: 18px;
+    }
+
+    p,
+    a {
+        font-weight: 500;
+        font-size: clamp(13px, 1.6vw, 16px);
+    }
+
+    .bg-form {
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        gap: clamp(13px, 1.6vw, 16px);
+        padding: clamp(14px, 2vw, 20px) clamp(28px, 4vw, 40px);
+    }
+
+    button,
+    input,
+    select {
+        padding: clamp(6px, .6vw, 14px) clamp(14px, 2vw, 20px);
+        border-radius: clamp(6px, .8vw, 12px);
+        font-size: clamp(13px, 1.6vw, 16px);
+        margin: 0px;
+    }
+
+    .active {
+        border-top-right-radius: 0px;
+    }
+
+}
+
+header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.bg {
+    background: linear-gradient(180deg, #F4F9FF 0%, #F5F7FF 100%);
+    border: 1px solid rgba(255, 255, 255, 0.51);
+    backdrop-filter: blur(6px);
+    border-radius: 21px;
+    width: 100%;
+    padding: 25px 30px;
+}
+
+.result-block {
+    display: flex;
+    align-items: end;
+    gap: 50px;
+}
+
+.new-operation {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .operation-btns {
+        display: flex;
+        gap: 10px;
+        padding-bottom: 18px;
+
+        button {
+            flex-grow: 1;
+            width: clamp(126px, 18vw, 180px);
+        }
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    padding-right: 20px;
+
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' stroke='%23AEA4E2' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat;
+
+    background-position: right 20px center;
+    background-size: 20px 9px;
+}
+
+.gap30 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#date::-webkit-calendar-picker-indicator {
+    filter: invert(60%);
+}
+
+.category-block {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+
+    input {
+        flex-grow: 1;
+    }
+}
+
+.main-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+}
+
+.stretch-btns {
+    display: flex;
+    gap: 30px;
+
+    button {
+        flex-grow: 1;
+    }
+}
+
+#stat,
+#expenses-category {
+    margin-top: 20px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--purple);
+
+}
+
+.row2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--purple);
+}
+
+.row3 {
+    display: grid;
+    grid-template-columns: .5fr 2fr 1fr;
+    gap: 30px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--purple);
+
+    span {
+        text-align: end;
+        width: fit-content;
+    }
+}
+
+.plus {
+    color: #3aa876;
+}
+
+.minus {
+    color: #d9534f;
+}
+
+.bar {
+    flex: 1;
+    height: 8px;
+    align-self: center;
+    background: #e6e3f7;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar div {
+    height: 100%;
+    background: var(--purple);
+}
+
+@media (max-width: 767px) {
+    .mainGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+#app h1, #app h2 {
+    transition: font-size 0.3s;
+}
+
+#app h1.long   { font-size: clamp(36px, 6.5vw, 64px); }
+#app h1.longer { font-size: clamp(26px, 4.4vw, 32px); }
+
+#app h2.long   { font-size: clamp(22px, 3.5vw, 32px); }
+#app h2.longer { font-size: clamp(18px, 2.6vw, 24px); }

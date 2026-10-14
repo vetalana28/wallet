@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кошелёк</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <section id="login" class="hidden">
+            <div class="bg-form">
+                <form class="card" id="loginForm" onsubmit="return false">
+                    <div class="coin">₽</div>
+                    <h1>Мой кошелек</h1>
+                    <label for="pw">Пароль</label>
+                    <input id="pw" type="password" autocomplete="current-password" placeholder="Введите пароль">
+                    <div class="err" id="loginErr"></div>
+                    <button class="btn" id="loginBtn">Войти</button>
+                    <p>При первом входе пароль — 0000</p>
+                </form>
+            </div>
+        </section>
+
+        <section id="app" class="hidden">
+            <div class="bg-form">
+                <header class="container">
+                    <h3>₽ Мой кошелек</h3>
+                    <div class="settings-btns">
+                        <button class="btn notActive" id="settingsBtn">Пароль</button>
+                        <button class="btn" id="logoutBtn">Выйти</button>
+                    </div>
+                </header>
+
+                <div class="bg">
+                    <div class="result-block">
+                        <div class="result">
+                            <p>Текущий остаток</p>
+                            <h1 id="result">0 ₽</h1>
+                        </div>
+                        <div class="earn">
+                            <p>Доходы</p>
+                            <h2 id="earn">0 ₽</h2>
+                        </div>
+                        <div class="expenses">
+                            <p>Расходы</p>
+                            <h2 id="expenses">0 ₽</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainGrid">
+                    <div class="main-blocks">
+                        <div class="new-operation bg">
+                            <h3 class="pb18">Новая опреация</h3>
+
+                            <div class="operation-btns">
+                                <button class="operation-btn btn active" id="expensesAddBtn">Расход</button>
+                                <button class="operation-btn btn notActive" id="earnAddBtn">Доход</button>
+                            </div>
+
+                            <div class="gap30">
+                                <div class="field">
+                                    <label for="amount">Сумма ₽</label>
+                                    <input id="amount" type="" placeholder="1 000">
+                                </div>
+                                <div class="field" id="categoryField">
+                                    <label for="categorySelector">Категория</label>
+                                    <select name="" id="categorySelector">
+                                        <!-- <option value="">Еда</option>
+                                        <option value="">Транспорт</option>
+                                        <option value="">Жилье</option>
+                                        <option value="">Развлечения</option>
+                                        <option value="">Здоровье</option> -->
+                                    </select>
+                                </div>
+                                <div class="field">
+                                    <label for="date">Дата</label>
+                                    <input type="date" name="" id="date">
+                                </div>
+                            </div>
+                            <div class="err" id="operationErr"></div>
+                            <button class="btn" id="operationBtn">Добавить</button>
+                        </div>
+
+                        <div class="category bg">
+                            <h3 class="pb18">Новая категория расходов</h3>
+                            <div class="category-block">
+                                <input id="categoryInput" type="" placeholder="Например, Спорт">
+
+                                <button class="btn" id="categoryBtn">Добавить</button>
+                            </div>
+                            <div class="err" id="categoryErr"></div>
+                        </div>
+
+                        <div class="lastOperations bg">
+                            <h3 class="pb18">Последние операции</h3>
+
+                            <div id="lastOperation">Операций пока нет.</div>
+                        </div>
+                    </div>
+                    <div class="main-blocks">
+                        <div class="stat bg">
+                            <h3 class="pb18">Статистика по периодам</h3>
+
+                            <div class="stretch-btns">
+                                <button class="stat-btn btn active" id="days">Дни</button>
+                                <button class="stat-btn btn notActive" id="weeks">Недели</button>
+                                <button class="stat-btn btn notActive" id="months">Месяцы</button>
+                            </div>
+
+                            <div id="stat">Пока нет данных. Добавьте первую операцию.
+                            </div>
+                        </div>
+                        <div class="expenses-category bg">
+                            <h3 class="pb18">Расходы по категориям</h3>
+
+                            <div class="stretch-btns">
+                                <button class="expenses-btn btn active" id="expenses-today">Сегодня</button>
+                                <button class="expenses-btn btn notActive" id="expenses-week">Неделя</button>
+                                <button class="expenses-btn btn notActive" id="expenses-month">Месяц</button>
+                                <button class="expenses-btn btn notActive" id="expenses-allTime">Всё время</button>
+                            </div>
+
+                            <div id="expenses-category">Пока нет данных. Добавьте первую операцию.
+                            </div>
+                        </div>
+                        <div class="recomendation bg">
+                            <h3 class="pb18">Рекомендации</h3>
+
+                            <div id="recomendation">Пока нет данных. Добавьте первую операцию.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="settings" class="hidden">
+            <div class="bg-form">
+                <form class="card" id="pwForm" onsubmit="return false">
+                    <h1>Смена пароля</h1>
+                    <label for="oldPw">Теущий пароль</label>
+                    <input id="oldPw" type="password" autocomplete="current-password" placeholder="Введите пароль">
+                    <label for="newPw">Новый пароль (мин. 4 символа)</label>
+                    <input id="newPw" type="password" autocomplete="current-password" placeholder="Введите пароль">
+                    <div class="err" id="pwErr"></div>
+                    <div class="settings-btns">
+                        <button class="btn notActive" id="pwCancel">Отмена</button>
+                        <button class="btn" id="pwSave">Сохранить</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
