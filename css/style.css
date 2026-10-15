@@ -164,6 +164,11 @@ form {
     padding-bottom: 20px;
 }
 
+#categoryErr{
+    padding-bottom: 0px;
+    padding-top: 10px;
+}
+
 #app>.bg-form {
     width: 100%;
     max-width: 1200px;
