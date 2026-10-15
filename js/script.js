@@ -171,7 +171,6 @@ let type = 'exp';          // расход или доход
 let period = 'days';       // days | weeks | months
 let range = 'today';       // today | week | month | allTime
 
-// Подсвечивает нажатую кнопку и сообщает, какая именно нажата
 function setupTabs(selector, onChange) {
     const buttons = document.querySelectorAll(selector);
     buttons.forEach(btn => {
@@ -248,7 +247,6 @@ function fitText(el) {
     el.classList.toggle('longer', len > 12);
 }
 
-// Баланс, доходы, расходы и последние операции
 function renderTotals() {
     let inc = 0, exp = 0;
     data.ops.forEach(o => { if (o.type === 'inc') inc += o.sum; else exp += o.sum; });
